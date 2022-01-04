@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Dominion End Turn Predictor",
+    "description": "サプライのカードとプレイヤーのレートから、ゲームの終了速度と終了条件を予測します。",
+    "version": "1.0",
+    "action": {
+      "default_title": "End Turn Predictor",
+      "default_popup": "popup.html"
+    },
+    "externally_connectable": {
+      "matches": ["https://dominion.games/"]
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://dominion.games/",
+          "https://www.google.com/"
+        ],
+        "js": [
+            "content.js"
+        ]
+      }
+    ],
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "scripting",
+      "storage",
+      "contextMenus"
+    ]
+}
