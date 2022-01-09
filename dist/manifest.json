@@ -26,6 +26,6 @@
       "activeTab",
       "scripting",
       "storage",
-      "contextMenus"
+      "webRequest"
     ]
 }
