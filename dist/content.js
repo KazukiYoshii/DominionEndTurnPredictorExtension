@@ -640,6 +640,7 @@ function getFeatures() {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message && message.action === 'GET_SUPPLY_INFO') {
     sendResponse(getFeatures());
+    return true;
   }
   return true;
 });
