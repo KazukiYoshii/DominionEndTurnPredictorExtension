@@ -61,17 +61,16 @@ class EndTurnPredictor {
 
     let predictBind = function(response) {
       if(chrome.runtime.lastError) {
-        setTimeout(predictBind, 1000);
-      } else {
-        let predictions = this.model.predict(
-          {
-            supply: tf.tensor(response.supply, [1, 15], 'int32'),
-            player_rates: tf.tensor(response.player_rates, [1, 2], 'float32')
-          }
-        ).array().then((predictions) => {
-          this.showResult(predictions)
-        })
+        setTimeout(1000);
       }
+      let predictions = this.model.predict(
+        {
+          supply: tf.tensor(response.supply, [1, 15], 'int32'),
+          player_rates: tf.tensor(response.player_rates, [1, 2], 'float32')
+        }
+      ).array().then((predictions) => {
+        this.showResult(predictions)
+      })
     }
 
     let message;
